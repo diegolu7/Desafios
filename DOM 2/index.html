@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>OK</title>
+</head>
+
+<body>
+
+  <form>
+    <label for="">nombre</label>
+    <input type="text">
+    <br><br>
+    <label for="">password</label>
+    <input type="password">
+  </form>
+  <h1>hola mundo</h1>
+  <h2>como estas</h2>
+  <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Mollitia, sequi esse? Consequatur itaque dolor vitae nam
+    incidunt, tempora officia doloribus soluta error maxime hic dicta nisi labore praesentium! Quis, maiores!</p>
+  <h2>titulo h2 2</h2>
+
+</body>
+
+<script>
+  document.addEventListener("DOMContentLoaded", function () {
+    console.log("dom esta cargado");
+  });
+
+  const p = document.querySelector("body > p");
+
+  p.addEventListener("click", () => {
+    console.log("p");
+
+    p.style = "background-color: black; color:#fff;";
+
+  });
+
+  //scroll
+  window.addEventListener("scroll", () => {
+    console.log("scroll");
+  })
+
+  const input = document.querySelector("body > form > input[type=text]:nth-child(2)");
+  // console.log(input);
+  input.addEventListener("blur", (e) => {
+    console.log(e.target.value);
+    e.target.style.background = "red";
+    e.target.style.placeholder = "San pedro de Colalao.";
+
+  });
+
+  inputPass = document.querySelector("body > form > input[type=password]:nth-child(6)");
+  inputPass.addEventListener("input", (e) => {
+    if (e.target.value == "") {
+      console.log("debe llenar el campo");
+    }
+  });
+</script>
+
+</html>
